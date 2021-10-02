@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/bob.png" type="Texture" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 0.01
+friction = 0.5
 rough = true
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -13,8 +13,9 @@ height = 25.4579
 
 [node name="People" type="RigidBody2D"]
 mode = 2
-mass = 3.0
+mass = 2.0
 physics_material_override = SubResource( 1 )
+linear_damp = 0.554
 script = ExtResource( 1 )
 
 [node name="bob" type="Sprite" parent="."]
