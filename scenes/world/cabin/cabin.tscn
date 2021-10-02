@@ -20,6 +20,7 @@ node_b = NodePath("../StaticBody2D")
 softness = 3.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 31
 physics_material_override = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
@@ -31,6 +32,7 @@ position = Vector2( 0, 58 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
+z_index = 1
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true

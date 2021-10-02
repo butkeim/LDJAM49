@@ -16,7 +16,7 @@ func _init():
 
 func _ready():
 	#OS.current_screen = 1
-	OS.window_fullscreen = true
+	#OS.window_fullscreen = true
 	#OS.window_borderless = true
 
 	_label_fps = get_node_or_null("GUI/LabelFPS")
