@@ -22,6 +22,12 @@ node_b = NodePath("../StaticBody2D")
 collision_mask = 31
 physics_material_override = SubResource( 1 )
 
+[node name="Position2DLeftSide" type="Position2D" parent="RigidBody2D"]
+position = Vector2( -123.616, 47.5445 )
+
+[node name="Position2DRightSide" type="Position2D" parent="RigidBody2D"]
+position = Vector2( 122.497, 48.3835 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 0, -40 )
 shape = SubResource( 2 )

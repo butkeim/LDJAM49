@@ -3,12 +3,15 @@ extends RigidBody2D
 export var speed = 0
 var direction: int
 
+var position_left_side: Position2D
+var position_right_side: Position2D
 
 func _ready() -> void:
 	contact_monitor = true
-	contacts_reported = 10
-	pass # Replace with function body.
-
+	contacts_reported = 5
+	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
+	position_right_side = $"../Cabin/RigidBody2D/Position2DRightSide"
+	
 func _process(delta: float) -> void:
 	var collidingbodies = get_colliding_bodies()
 	
@@ -30,9 +33,9 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if direction == 1:
-		distance_to_side = abs(position.x - 125)
+		distance_to_side = position.distance_to(position_right_side.global_position)
 	elif direction == -1:
-		distance_to_side = abs(position.x - -125)
+		distance_to_side = position.distance_to(position_left_side.global_position)
 	
 	var side_factor = distance_to_side / 100
 	
@@ -41,5 +44,4 @@ func _physics_process(delta: float) -> void:
 	elif side_factor < 0.1:
 		side_factor = 0.1
 	
-	#print(side_factor)
 	apply_central_impulse(Vector2(direction * speed * side_factor, 0))
