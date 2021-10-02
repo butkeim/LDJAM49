@@ -2,10 +2,10 @@
 
 [ext_resource path="res://assets/cabin.png" type="Texture" id=1]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.01
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 124.009, 10.7334 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -17,19 +17,18 @@ extents = Vector2( 1.82986, 2.13094 )
 position = Vector2( 0, 75 )
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../StaticBody2D")
-softness = 3.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 31
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 0, -40 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 0, 58 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
 z_index = 1
