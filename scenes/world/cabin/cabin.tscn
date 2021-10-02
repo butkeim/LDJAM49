@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/cabin.png" type="Texture" id=1]
+[ext_resource path="res://scenes/world/cabin/cabin.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.01
@@ -12,13 +13,16 @@ extents = Vector2( 124.009, 10.7334 )
 extents = Vector2( 1.82986, 2.13094 )
 
 [node name="Cabin" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2( 0, 75 )
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../StaticBody2D")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
+"cabin",
+]]
 collision_mask = 31
 physics_material_override = SubResource( 1 )
 
@@ -45,6 +49,8 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0, 75 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 3 )
