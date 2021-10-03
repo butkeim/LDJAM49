@@ -12,6 +12,7 @@ export var spawn_distance = 700
 
 
 func _ready() -> void:
+	randomize()
 	cabin = $"../Cabin/RigidBody2D/"
 
 
