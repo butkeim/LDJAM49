@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Bob/bob/Folder 1/bob.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/Bob/bob_body/Folder 1/bob_body.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="PhysicsMaterial" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.05
 rough = true
 
@@ -12,7 +12,7 @@ rough = true
 radius = 14.4665
 height = 27.4701
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "move"
 loop = true
 tracks/0/type = "value"
@@ -66,8 +66,13 @@ tracks/3/keys = {
 
 [node name="People" type="RigidBody2D"]
 mode = 2
+<<<<<<< Updated upstream
 mass = 40.0
 physics_material_override = SubResource( 3 )
+=======
+mass = 20.0
+physics_material_override = SubResource( 1 )
+>>>>>>> Stashed changes
 linear_damp = 0.5
 script = ExtResource( 1 )
 
@@ -75,12 +80,12 @@ script = ExtResource( 1 )
 scale = Vector2( -1, 1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( 1.795, -11.673 )
+position = Vector2( 1.795, -11.9405 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 3 )
 
 [node name="bob" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( -5.80916, -47.8092 )
+position = Vector2( -5.4445, -47.4445 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 2 )
 frame = 1
@@ -92,4 +97,4 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
 playback_speed = 2.0
-anims/move = SubResource( 4 )
+anims/move = SubResource( 3 )
