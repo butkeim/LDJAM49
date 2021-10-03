@@ -5,8 +5,6 @@ export (float) var speed
 signal entered_cabin(force, position)
 
 var cabin_rigidbody: RigidBody2D
-var cabin: Node2D
-var area: Area2D
 var direction: Vector2
 var has_attaked = false
 var has_touched = false
@@ -18,35 +16,33 @@ func _ready() -> void:
 	initial_position = Vector2(global_position.x + rand_range(-100, 100), global_position.y + rand_range(-100, 100))
 	contact_monitor = true
 	contacts_reported = 2
-	area = $"Area2D"
-	area.connect("body_entered", self, "body_entered_handler")
+	connect("body_entered", self, "body_entered_handler")
 	cabin_rigidbody = $"../Cabin/RigidBody2D/"
-	cabin = $"../Cabin/"
-	#connect("entered_cabin", cabin, "apply_force_at_handler")
-	direction = position.direction_to(cabin.position)
-	
+	direction = set_direction()
 	set_deferred("linear_velocity", Vector2(direction.x * speed, direction.y * speed))
-	set_applied_force(Vector2(direction.x * speed, direction.y * speed))
 
-func _process(delta: float) -> void:
+func set_direction() -> Vector2:
+	return position.direction_to(Vector2(cabin_rigidbody.position.x + rand_range(-110, 110), cabin_rigidbody.position.y))
+	
+
+func _physics_process(delta: float) -> void:
 	if is_near_cabin() && !has_attaked:
 		has_attaked = true
-		add_central_force(Vector2(direction.x * speed * 200, direction.y * speed * 200))
+		add_central_force(Vector2(direction.x * speed * 100, direction.y * speed * 100))
 	if has_touched && !is_on_return:
 		is_on_return = true
 		var return_direction = position.direction_to(initial_position)
-		apply_central_impulse(Vector2(return_direction.x * speed * 100, return_direction.y * speed * 100))
+		add_central_force(Vector2(-direction.x * speed * 150, -direction.y * speed * 150))
+		apply_central_impulse(Vector2(return_direction.x * speed * 30, return_direction.y * speed * 30))
 
 func is_near_cabin() -> bool:
-	var distance_to_cabin = position.distance_to(cabin.position)
+	var distance_to_cabin = position.distance_to(cabin_rigidbody.position)
 	return distance_to_cabin < 300
 
 func body_entered_handler(body: Node):
 	if body.is_in_group("cabin"):
-		emit_signal("entered_cabin", linear_velocity, position)
-		$"Area2D".set_deferred("monitoring", false)
-		print("body entered");
 		has_touched = true
+		$CollisionShape2D.set_deferred("disabled", true)
 		
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
