@@ -42,7 +42,7 @@ func threshold_rock_spawn(delta: float):
 		timer_rock = 0
 		threshold_rock = rand_range(threshold_rock_min, threshold_rock_max)
 		var instance_rock = bird_rock.instance()
-		instance_rock.position = Vector2(cabin.position.x - 500, cabin.position.y - rand_range(200, 230))
+		instance_rock.position = Vector2(cabin.position.x - 500, cabin.position.y - rand_range(170, 200))
 		get_parent().add_child(instance_rock)
 		
 
