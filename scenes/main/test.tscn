@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/world/cabin/cabin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
 [ext_resource path="res://scenes/world/people/people.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/world/bird/bird_spawner.tscn" type="PackedScene" id=5]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 32.818
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -71,10 +68,3 @@ speed = 10.0
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 5 )]
 position = Vector2( -250.084, 90.1639 )
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-mass = 160.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( -222.313, -165.457 )
-shape = SubResource( 1 )

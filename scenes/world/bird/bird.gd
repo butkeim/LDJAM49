@@ -24,6 +24,12 @@ func set_direction() -> Vector2:
 	return position.direction_to(Vector2(cabin_rigidbody.position.x + rand_range(-110, 110), cabin_rigidbody.position.y))
 	
 
+func _process(delta: float) -> void:
+	if linear_velocity.x < 0:
+		$Node2D.scale.x = -1
+	else:
+		$Node2D.scale.x = 1		
+
 func _physics_process(delta: float) -> void:
 	if is_near_cabin() && !has_attaked:
 		has_attaked = true
