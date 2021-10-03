@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/world/people/people.gd" type="Script" id=1]
-[ext_resource path="res://assets/bob.png" type="Texture" id=2]
-[ext_resource path="res://assets/Bob/tmp/bob/Folder 1/Layer 5.bmp" type="Texture" id=3]
+[ext_resource path="res://assets/Bob/bob/Folder 1/bob.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/Bob/bob_body/Folder 1/bob_body.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="PhysicsMaterial" id=4]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
 rough = true
 
@@ -12,21 +12,81 @@ rough = true
 radius = 14.4665
 height = 27.4701
 
+[sub_resource type="Animation" id=3]
+resource_name = "move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bob_body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bob:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6, -48 ), Vector2( -5, -47 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bob:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bob_body:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
 [node name="People" type="RigidBody2D"]
 mode = 2
 mass = 2.0
-physics_material_override = SubResource( 4 )
+physics_material_override = SubResource( 1 )
 linear_damp = 0.5
 script = ExtResource( 1 )
 
-[node name="bob" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="bob_body" type="AnimatedSprite" parent="."]
+position = Vector2( 1.795, -11.533 )
+scale = Vector2( 0.184717, 0.184717 )
+frames = ExtResource( 3 )
 
-[node name="Layer 5" type="Sprite" parent="."]
-position = Vector2( 0, -7.088 )
+[node name="bob" type="AnimatedSprite" parent="."]
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
-texture = ExtResource( 3 )
+frames = ExtResource( 2 )
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0, -23 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+playback_speed = 2.0
+anims/move = SubResource( 3 )

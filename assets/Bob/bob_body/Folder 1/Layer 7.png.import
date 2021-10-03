@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cabin.png-8311603384075e8e3663b1734cefa24e.stex"
+path="res://.import/Layer 7.png-3fc9a3484be83aa179cdd4972a4f0b1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cabin.png"
-dest_files=[ "res://.import/cabin.png-8311603384075e8e3663b1734cefa24e.stex" ]
+source_file="res://assets/Bob/bob_body/Folder 1/Layer 7.png"
+dest_files=[ "res://.import/Layer 7.png-3fc9a3484be83aa179cdd4972a4f0b1f.stex" ]
 
 [params]
 
