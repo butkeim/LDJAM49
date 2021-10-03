@@ -16,7 +16,7 @@ height = 27.4701
 resource_name = "move"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("bob_body:position")
+tracks/0/path = NodePath("Node2D/bob_body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -13 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("bob:position")
+tracks/1/path = NodePath("Node2D/bob:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "values": [ Vector2( -6, -48 ), Vector2( -5, -47 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("bob:rotation_degrees")
+tracks/2/path = NodePath("Node2D/bob:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -52,7 +52,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("bob_body:rotation_degrees")
+tracks/3/path = NodePath("Node2D/bob_body:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -71,13 +71,16 @@ physics_material_override = SubResource( 1 )
 linear_damp = 0.5
 script = ExtResource( 1 )
 
-[node name="bob_body" type="AnimatedSprite" parent="."]
-position = Vector2( 1.795, -11.533 )
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2( -1, 1 )
+
+[node name="bob_body" type="AnimatedSprite" parent="Node2D"]
+position = Vector2( 1.795, -11.673 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 3 )
 
-[node name="bob" type="AnimatedSprite" parent="."]
-position = Vector2( -6, -48 )
+[node name="bob" type="AnimatedSprite" parent="Node2D"]
+position = Vector2( -5.80916, -47.8092 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 2 )
 frame = 1
