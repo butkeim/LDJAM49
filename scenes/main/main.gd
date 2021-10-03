@@ -39,5 +39,5 @@ func _process(delta):
 	#if Input.is_action_just_pressed("ui_end") && global.debug:
 	#	get_viewport().debug_draw=((get_viewport().debug_draw + 1 ) % 2) * 3
 
-	#if global.DEBUG && _label_fps:
-	#	_label_fps.set_text(String(Engine.get_frames_per_second()))
+	if _label_fps:
+		_label_fps.set_text(String(Engine.get_frames_per_second()))
