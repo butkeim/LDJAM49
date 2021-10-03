@@ -16,7 +16,7 @@ extents = Vector2( 1.82986, 2.13094 )
 script = ExtResource( 2 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2( 0, 75 )
+position = Vector2( 0, 70 )
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../StaticBody2D")
 
