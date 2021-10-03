@@ -24,11 +24,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_near_cabin() && !has_attaked:
 		has_attaked = true
-		set_applied_force(Vector2(direction.x * speed * 20, direction.y * speed * 20))
+		add_central_force(Vector2(direction.x * speed * 20, direction.y * speed * 20))
 	if has_touched && !is_on_return:
 		is_on_return = true
 		var return_direction = position.direction_to(initial_position)
-		set_applied_force(Vector2(return_direction.x * speed, return_direction.y * speed))
+		add_central_force(Vector2(return_direction.x * speed, return_direction.y * speed))
 
 func is_near_cabin() -> bool:
 	var distance_to_cabin = position.distance_to(cabin.position)
