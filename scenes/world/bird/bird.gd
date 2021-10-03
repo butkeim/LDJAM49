@@ -43,6 +43,13 @@ func body_entered_handler(body: Node):
 	if body.is_in_group("cabin"):
 		has_touched = true
 		$CollisionShape2D.set_deferred("disabled", true)
+		var particle  = $Particles2D
+		remove_child(particle)
+		get_parent().add_child(particle)
+		particle.global_position = global_position
+		particle.emitting = true
+		yield(get_tree().create_timer(20.0), "timeout")
+		particle.queue_free()
 		
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
