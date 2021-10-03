@@ -43,31 +43,31 @@ death_angle = 36.0
 position = Vector2( 11.2903, 11.1423 )
 collision_layer = 2
 collision_mask = 2
-speed = 6
+speed = 6.0
 
 [node name="People2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 33.1347, 12.6233 )
 collision_layer = 4
 collision_mask = 4
-speed = 6
+speed = 6.2
 
 [node name="People4" parent="." instance=ExtResource( 3 )]
 position = Vector2( -9.44339, 11.1423 )
 collision_layer = 4
 collision_mask = 4
-speed = 6
+speed = 6.8
 
 [node name="People3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -29.8067, 11.8828 )
 collision_layer = 2
 collision_mask = 2
-speed = 6
+speed = 7.0
 
 [node name="People5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3.51517, 11.5126 )
 collision_layer = 2
 collision_mask = 2
-speed = 6
+speed = 7.5
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 5 )]
 position = Vector2( -250.084, 90.1639 )

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var speed = 0
+export var speed = 0.0
 var direction: int
 
 var position_left_side: Position2D
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	
 	if side_factor > 6:
 		side_factor = 6
-	elif side_factor < 0.1:
-		side_factor = 0.1
+	elif side_factor < 1.5:
+		side_factor = 1.5
 	
 	apply_central_impulse(Vector2(direction * speed * side_factor * 10, 0))
