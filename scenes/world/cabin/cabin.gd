@@ -19,6 +19,8 @@ func _physics_process(delta: float) -> void:
 	if !hasFallen && (cabin_rigid_body.rotation_degrees > death_angle || cabin_rigid_body.rotation_degrees < -death_angle):
 		hasFallen = true
 		remove_child(join)
+		$"RigidBody2D/CollisionShape2D".set_deferred("disabled", true)
+		$"RigidBody2D/CollisionShape2D2".set_deferred("disabled", true)
 
 func apply_force_at_handler(force: Vector2, position_out: Vector2):
 	if force.y > 0:

@@ -6,6 +6,7 @@ var direction: int
 var position_left_side: Position2D
 var position_right_side: Position2D
 var sprites: Node2D
+onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	contact_monitor = true
@@ -16,10 +17,20 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	var collidingbodies = get_colliding_bodies()
-	
+	var cabin_collided = false
+	for cb in collidingbodies:
+		if cb.is_in_group("cabin"):
+			cabin_collided = true
+
+	if !cabin_collided:
+		animation_player.play("fall")
+	else:
+		animation_player.play("move")
+
 	if collidingbodies.size() == 0:
 		direction = 0
 		return
+	
 	if Input.is_action_pressed("ui_left"):
 		direction = -1
 	elif Input.is_action_pressed("ui_right"):
