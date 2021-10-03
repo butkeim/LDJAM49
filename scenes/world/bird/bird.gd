@@ -12,7 +12,6 @@ var is_on_return = false
 var initial_position: Vector2
 
 func _ready() -> void:
-	print("spawn bird")
 	initial_position = Vector2(global_position.x + rand_range(-100, 100), global_position.y + rand_range(-100, 100))
 	contact_monitor = true
 	contacts_reported = 2

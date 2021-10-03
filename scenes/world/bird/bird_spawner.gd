@@ -29,7 +29,13 @@ func _process(delta: float) -> void:
 		get_parent().add_child(instance_bird)
 
 func get_random_valid_angle() -> float:
-	if rand_range(0, 1) > 0.5:
-		return rand_range(-50, 50)
+	var dispatcher_rand = rand_range(0, 1)
+	
+	if dispatcher_rand < 0.25:
+		return rand_range(-50, -30)
+	elif dispatcher_rand >= 0.25 && dispatcher_rand < 0.50:
+		return rand_range(30, 50)
+	elif dispatcher_rand >= 0.50 && dispatcher_rand < 0.75:
+		return rand_range(130, 150)
 	else:
-		return rand_range(130, 230)
+		return rand_range(210, 230)
