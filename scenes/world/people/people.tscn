@@ -66,13 +66,8 @@ tracks/3/keys = {
 
 [node name="People" type="RigidBody2D"]
 mode = 2
-<<<<<<< Updated upstream
 mass = 40.0
 physics_material_override = SubResource( 3 )
-=======
-mass = 20.0
-physics_material_override = SubResource( 1 )
->>>>>>> Stashed changes
 linear_damp = 0.5
 script = ExtResource( 1 )
 

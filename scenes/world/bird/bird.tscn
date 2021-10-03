@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=4 format=2]
-=======
-[gd_scene load_steps=6 format=2]
->>>>>>> Stashed changes
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/bird/bird.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/world/bird/bird.gd" type="Script" id=2]
@@ -10,11 +6,6 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.163
 
-<<<<<<< Updated upstream
-[node name="Bird" type="RigidBody2D"]
-mode = 2
-mass = 10.0
-=======
 [sub_resource type="Animation" id=3]
 resource_name = "fly"
 loop = true
@@ -31,13 +22,9 @@ tracks/0/keys = {
 "values": [ 0, 3 ]
 }
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 16.4965
-
 [node name="Bird" type="RigidBody2D"]
 mode = 2
-mass = 15.0
->>>>>>> Stashed changes
+mass = 10.0
 gravity_scale = 0.0
 linear_damp = 0.0
 script = ExtResource( 2 )
@@ -58,14 +45,4 @@ anims/fly = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
-<<<<<<< Updated upstream
-=======
-[node name="Area2D" type="Area2D" parent="."]
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.36388, 1.36388 )
-shape = SubResource( 2 )
-
->>>>>>> Stashed changes
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
