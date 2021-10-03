@@ -54,13 +54,22 @@ func body_entered_handler(body: Node):
 	if body.is_in_group("cabin") && !has_touched_cabin:
 		has_touched_cabin = true
 		$CollisionShape2D.set_deferred("disabled", true)
+
 		var particle  = $Particles2D
 		remove_child(particle)
 		get_parent().add_child(particle)
 		particle.global_position = global_position + particle.position
 		particle.emitting = true
+
+		var particle2  = $Particles2D2
+		remove_child(particle2)
+		get_parent().add_child(particle2)
+		particle2.global_position = global_position + particle2.position
+		particle2.emitting = true
+		
 		yield(get_tree().create_timer(20.0), "timeout")
 		particle.queue_free()
+		particle2.queue_free()
 	
 
 
