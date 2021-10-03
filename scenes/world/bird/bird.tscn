@@ -4,10 +4,9 @@
 [ext_resource path="res://scenes/world/bird/bird.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.163
+radius = 11.5608
 
-[sub_resource type="Animation" id=3]
-resource_name = "fly"
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("bird:frame")
@@ -41,7 +40,7 @@ frames = ExtResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fly"
 playback_speed = 2.0
-anims/fly = SubResource( 3 )
+anims/fly = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
