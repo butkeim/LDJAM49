@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Bob/bob/Folder 1/bob.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/Bob/bob_body/Folder 1/bob_body.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="PhysicsMaterial" id=3]
 friction = 0.5
 rough = true
 
@@ -12,7 +12,7 @@ rough = true
 radius = 14.4665
 height = 27.4701
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 resource_name = "move"
 loop = true
 tracks/0/type = "value"
@@ -67,7 +67,7 @@ tracks/3/keys = {
 [node name="People" type="RigidBody2D"]
 mode = 2
 mass = 2.0
-physics_material_override = SubResource( 1 )
+physics_material_override = SubResource( 3 )
 linear_damp = 0.5
 script = ExtResource( 1 )
 
@@ -92,4 +92,4 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
 playback_speed = 2.0
-anims/move = SubResource( 3 )
+anims/move = SubResource( 4 )

@@ -5,12 +5,14 @@ var direction: int
 
 var position_left_side: Position2D
 var position_right_side: Position2D
+var sprites: Node2D
 
 func _ready() -> void:
 	contact_monitor = true
 	contacts_reported = 5
 	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
 	position_right_side = $"../Cabin/RigidBody2D/Position2DRightSide"
+	sprites = $"Node2D"
 	
 func _process(delta: float) -> void:
 	var collidingbodies = get_colliding_bodies()
@@ -32,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	if direction == 0:
 		return
 	
+	sprites.scale.x = direction * -1
 	if direction == 1:
 		distance_to_side = position.distance_to(position_right_side.global_position)
 	elif direction == -1:
