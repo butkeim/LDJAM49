@@ -15,14 +15,14 @@ var initial_position: Vector2
 
 func _ready() -> void:
 	print("spawn bird")
-	initial_position = Vector2(global_position.x + rand_range(-400, 400), global_position.y + rand_range(-400, 400))
+	initial_position = Vector2(global_position.x + rand_range(-100, 100), global_position.y + rand_range(-100, 100))
 	contact_monitor = true
 	contacts_reported = 2
 	area = $"Area2D"
 	area.connect("body_entered", self, "body_entered_handler")
 	cabin_rigidbody = $"../Cabin/RigidBody2D/"
 	cabin = $"../Cabin/"
-	connect("entered_cabin", cabin, "apply_force_at_handler")
+	#connect("entered_cabin", cabin, "apply_force_at_handler")
 	direction = position.direction_to(cabin.position)
 	
 	set_deferred("linear_velocity", Vector2(direction.x * speed, direction.y * speed))
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	if has_touched && !is_on_return:
 		is_on_return = true
 		var return_direction = position.direction_to(initial_position)
-		add_central_force(Vector2(return_direction.x * speed * 100, return_direction.y * speed * 100))
+		apply_central_impulse(Vector2(return_direction.x * speed * 100, return_direction.y * speed * 100))
 
 func is_near_cabin() -> bool:
 	var distance_to_cabin = position.distance_to(cabin.position)

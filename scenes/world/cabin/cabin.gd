@@ -21,8 +21,6 @@ func _physics_process(delta: float) -> void:
 		remove_child(join)
 
 func apply_force_at_handler(force: Vector2, position_out: Vector2):
-	print(cabin_rigid_body.to_local(position_out))
-	print(force)
 	if force.y > 0:
 		force = force.rotated(deg2rad(180))
 	next_force_position_to_apply = cabin_rigid_body.to_local(position_out)
