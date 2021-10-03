@@ -10,7 +10,7 @@ radius = 16.163
 [sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Node2D/bird:frame")
+tracks/0/path = NodePath("Node2D/bird:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -66,6 +66,7 @@ rect = Rect2( -100, -100, 200, 200 )
 [node name="bird" type="AnimatedSprite" parent="Node2D"]
 scale = Vector2( 0.204, 0.204 )
 frames = ExtResource( 1 )
+frame = 2
 
 [node name="Particles2D" type="Particles2D" parent="."]
 emitting = false
