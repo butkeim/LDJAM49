@@ -47,4 +47,4 @@ func _physics_process(delta: float) -> void:
 	elif side_factor < 0.1:
 		side_factor = 0.1
 	
-	apply_central_impulse(Vector2(direction * speed * side_factor, 0))
+	apply_central_impulse(Vector2(direction * speed * side_factor * 10, 0))

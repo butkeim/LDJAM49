@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Bob/bob_body/Folder 1/bob_body.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="PhysicsMaterial" id=3]
-friction = 0.5
+friction = 0.05
 rough = true
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -66,7 +66,7 @@ tracks/3/keys = {
 
 [node name="People" type="RigidBody2D"]
 mode = 2
-mass = 2.0
+mass = 20.0
 physics_material_override = SubResource( 3 )
 linear_damp = 0.5
 script = ExtResource( 1 )

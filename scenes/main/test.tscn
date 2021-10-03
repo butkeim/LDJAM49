@@ -80,5 +80,5 @@ position = Vector2( -90.6825, -152.138 )
 mass = 160.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 72.2492, -178.989 )
+position = Vector2( -222.313, -165.457 )
 shape = SubResource( 1 )

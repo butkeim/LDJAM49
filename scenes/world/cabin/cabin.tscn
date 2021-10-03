@@ -24,7 +24,7 @@ node_b = NodePath("../StaticBody2D")
 "cabin",
 ]]
 collision_mask = 31
-mass = 100.0
+mass = 102.041
 physics_material_override = SubResource( 1 )
 
 [node name="Position2DLeftSide" type="Position2D" parent="RigidBody2D"]

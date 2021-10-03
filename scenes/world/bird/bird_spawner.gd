@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 		var spawn_vec_rotated = spawn_vec.rotated(deg2rad(rand_range(0, 360)))
 		var instance_bird = bird.instance()
 		instance_bird.position = spawn_vec_rotated
-		instance_bird.speed = 20
+		instance_bird.speed = 100
 		get_parent().add_child(instance_bird)
