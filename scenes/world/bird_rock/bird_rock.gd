@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const carrier = preload("res://scenes/world/bird_rock/bird_rock_carrier.gd")
+
 export (float) var speed = 100
 var rigidbody: RigidBody2D
 
@@ -14,6 +16,7 @@ var has_rebound = false
 
 var timer_before_drop = 0.0
 var time_before_drop = 0.2
+
 
 func _ready() -> void:
 	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
@@ -39,6 +42,12 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	if timer_before_drop > time_before_drop && !has_been_dropped:
 		has_been_dropped = true
 		gravity_scale = 1
+		var bird = $Node2D as carrier
+		var bird_global_position = bird.global_position
+		remove_child(bird)
+		get_parent().add_child(bird)
+		bird.move_out()
+		bird.global_position = bird_global_position
 		$CollisionShape2D.set_deferred("disabled", false)
 		
 func body_entered_handler(body: Node):
@@ -53,3 +62,7 @@ func body_entered_handler(body: Node):
 		yield(get_tree().create_timer(20.0), "timeout")
 		particle.queue_free()
 	
+
+
+func _on_VisibilityNotifier2D_viewport_exited(viewport: Viewport) -> void:
+	pass # Replace with function body.

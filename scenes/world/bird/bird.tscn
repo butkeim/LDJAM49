@@ -10,7 +10,7 @@ radius = 16.163
 [sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Node2D/bird:frame")
+tracks/0/path = NodePath("../Node2D/bird:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -43,7 +43,7 @@ scale = 0.25
 
 [node name="Bird" type="RigidBody2D"]
 mode = 2
-mass = 10.0
+mass = 12.0
 gravity_scale = 0.0
 linear_damp = 0.0
 script = ExtResource( 2 )
