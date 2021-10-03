@@ -17,7 +17,9 @@ func _ready() -> void:
 	connect("body_entered", self, "body_entered_handler")
 	cabin = $"../Cabin/RigidBody2D/"
 	direction = position.direction_to(cabin.position)
-	set_applied_force(Vector2(direction.x * speed, direction.y * speed))
+	
+	set_deferred("linear_velocity", Vector2(direction.x * speed, direction.y * speed))
+	#set_applied_force(Vector2(direction.x * speed, direction.y * speed))
 
 func _physics_process(delta: float) -> void:
 	if is_near_cabin() && !has_attaked:
@@ -34,12 +36,8 @@ func is_near_cabin() -> bool:
 
 func body_entered_handler(body: Node):
 	if body.is_in_group("cabin"):
-		print("oscar")
 		$CollisionShape2D.set_deferred("disabled", true)
 		has_touched = true
 		
-
-
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
-	pass # Replace with function body.
