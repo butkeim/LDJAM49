@@ -8,6 +8,8 @@ var next_force_to_apply: Vector2
 var next_force_position_to_apply: Vector2
 var apply_force = false
 var paused = true
+var win = false
+var win_copter
 
 func pause():
 	paused = true
@@ -20,15 +22,19 @@ func start():
 func _ready() -> void:
 	cabin_rigid_body = $RigidBody2D
 	join = $PinJoint2D
+	$"../Copter".connect("has_arrived", self, "start_win_dequence")
+
 
 func _physics_process(delta: float) -> void:
 	if paused:
 		return
+	if win:
+		$KinematicBody2D.move_and_collide(Vector2(0, -30) * delta)
+		
 	if apply_force:
 		apply_force = false
 		cabin_rigid_body.apply_impulse(next_force_position_to_apply, next_force_to_apply)
 	if !hasFallen && (cabin_rigid_body.rotation_degrees > death_angle || cabin_rigid_body.rotation_degrees < -death_angle):
-		print("oooo")
 		hasFallen = true
 		remove_child(join)
 		$"RigidBody2D/CollisionShape2D".set_deferred("disabled", true)
@@ -41,3 +47,8 @@ func apply_force_at_handler(force: Vector2, position_out: Vector2):
 	next_force_to_apply = force
 	apply_force = true
 	
+func start_win_dequence(copter):
+	win_copter = copter
+	win = true
+	remove_child(join)
+	$KinematicBody2D/CollisionShape2D.set_deferred("disabled", false)
