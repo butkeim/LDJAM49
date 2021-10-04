@@ -53,8 +53,8 @@ func body_entered_handler(body: Node):
 		get_parent().add_child(particle)
 		particle.global_position = global_position
 		particle.emitting = true
-		yield(get_tree().create_timer(20.0), "timeout")
-		particle.queue_free()
+		get_tree().create_timer(20.0).connect("timeout", particle, "queue_free")
+
 		
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()

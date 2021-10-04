@@ -45,7 +45,7 @@ scale = 0.02
 [sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Node2D/bird:frame")
+tracks/0/path = NodePath("../bird:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -79,6 +79,7 @@ z_index = 3
 emitting = false
 amount = 5
 lifetime = 4.0
+one_shot = true
 explosiveness = 1.0
 local_coords = false
 process_material = SubResource( 2 )
@@ -105,15 +106,14 @@ script = ExtResource( 3 )
 position = Vector2( -0.287964, 21.0182 )
 rect = Rect2( -100, -100, 200, 200 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
-autoplay = "fly"
-playback_speed = 2.0
-anims/fly = SubResource( 4 )
-
 [node name="bird" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 10.678, 0 )
 scale = Vector2( 0.204, 0.204 )
 frames = ExtResource( 4 )
-frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/bird"]
+autoplay = "fly"
+playback_speed = 2.0
+anims/fly = SubResource( 4 )
 
 [connection signal="screen_exited" from="Node2D/VisibilityNotifier2D" to="Node2D" method="_on_VisibilityNotifier2D_screen_exited"]
