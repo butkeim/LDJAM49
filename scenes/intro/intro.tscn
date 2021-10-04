@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/cabin/cabin.png" type="Texture" id=1]
 [ext_resource path="res://assets/eric/eric_body.tres" type="SpriteFrames" id=2]
@@ -26,11 +26,43 @@
 [ext_resource path="res://sounds/hit4.wav" type="AudioStream" id=24]
 [ext_resource path="res://assets/Rainbow You.otf" type="DynamicFontData" id=25]
 [ext_resource path="res://sounds/airSupport.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/montagne/line.tres" type="SpriteFrames" id=28]
 
 [sub_resource type="DynamicFont" id=15]
 size = 32
 outline_size = 2
 font_data = ExtResource( 25 )
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "gogogo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
 [sub_resource type="Animation" id=16]
 loop = true
@@ -1204,6 +1236,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cabin/Line:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=14]
 length = 11.0
@@ -1522,6 +1566,28 @@ tracks/26/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/27/type = "value"
+tracks/27/path = NodePath("Cabin/Line:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 1, 5.34 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/28/type = "animation"
+tracks/28/path = NodePath("Cabin/Line/AnimationPlayer")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"clips": PoolStringArray( "gogogo" ),
+"times": PoolRealArray( 0.98 )
+}
 
 [node name="Intro" type="Node2D"]
 
@@ -1566,13 +1632,23 @@ margin_left = 40.0
 margin_top = -51.0
 margin_right = 313.0
 margin_bottom = -21.0
-custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 15 )
 text = "/!\\ CHOPPER ON IT'S WAY /!\\"
 
 [node name="Cabin" type="Node2D" parent="."]
 position = Vector2( 0, -500 )
+
+[node name="Line" type="AnimatedSprite" parent="Cabin"]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+frames = ExtResource( 28 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Line"]
+playback_speed = 5.0
+anims/RESET = SubResource( 29 )
+anims/gogogo = SubResource( 28 )
 
 [node name="Camera2D" type="Camera2D" parent="Cabin"]
 scale = Vector2( 0.531987, 0.537977 )
@@ -1597,12 +1673,12 @@ position = Vector2( 50, 41 )
 scale = Vector2( 1.1, 1.1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.185 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.66667, -47.6667 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 4 )
 
@@ -1618,12 +1694,12 @@ position = Vector2( 94, 38 )
 scale = Vector2( 1.05, 1.05 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.185 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 5 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.66667, -47.6667 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 
@@ -1638,12 +1714,12 @@ position = Vector2( -41, 42 )
 [node name="Node2D" type="Node2D" parent="Cabin/People"]
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.185 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 13 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.66667, -47.6667 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 12 )
 
@@ -1660,12 +1736,12 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.185 )
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 18 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.66667, -47.6667 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 15 )
 
@@ -1681,14 +1757,15 @@ position = Vector2( -89, 43 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.185 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 17 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.66667, -47.6667 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 16 )
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Jimmy"]
 playback_speed = 2.0
@@ -1713,7 +1790,7 @@ process_material = SubResource( 26 )
 texture = ExtResource( 6 )
 
 [node name="Bird" type="Sprite" parent="."]
-position = Vector2( 0, 263 )
+position = Vector2( 0, 273 )
 scale = Vector2( 0.25, 0.25 )
 z_index = 2
 texture = ExtResource( 7 )
