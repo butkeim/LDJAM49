@@ -17,8 +17,12 @@ var has_rebound = false
 var timer_before_drop = 0.0
 var time_before_drop = 0.2
 
+var paths_sound_impact: Array
 
 func _ready() -> void:
+	paths_sound_impact.append("res://sounds/hit3.wav")
+	paths_sound_impact.append("res://sounds/hit4.wav")
+	
 	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
 	position_right_side = $"../Cabin/RigidBody2D/Position2DRightSide"
 	drop_x = rand_range(position_left_side.global_position.x, position_right_side.global_position.x)
@@ -52,6 +56,9 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 		
 func body_entered_handler(body: Node):
 	if body.is_in_group("cabin") && !has_touched_cabin:
+		
+		run_sound(paths_sound_impact)
+		
 		has_touched_cabin = true
 		$CollisionShape2D.set_deferred("disabled", true)
 
@@ -71,7 +78,12 @@ func body_entered_handler(body: Node):
 		particle.queue_free()
 		particle2.queue_free()
 	
-
+func run_sound(sound_paths):
+	var stream = load(sound_paths[randi() % sound_paths.size()])
+	var player = AudioStreamPlayer.new()
+	player.stream = stream
+	add_child(player)
+	player.play()
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport: Viewport) -> void:
 	pass # Replace with function body.
