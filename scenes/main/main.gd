@@ -26,7 +26,7 @@ func _ready():
 
 func _process(delta):
 
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up"):
 		$World.start_world()
 		
 	if Input.is_action_just_pressed("ui_reset"):
