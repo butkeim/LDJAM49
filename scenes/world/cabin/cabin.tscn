@@ -27,7 +27,7 @@ node_b = NodePath("../StaticBody2D")
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
 "cabin",
 ]]
-collision_mask = 31
+collision_mask = 95
 mass = 102.041
 physics_material_override = SubResource( 1 )
 
@@ -62,6 +62,8 @@ shape = SubResource( 3 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 0.878418, 104.189 )
+collision_layer = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 4 )

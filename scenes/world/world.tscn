@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/world/cabin/cabin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/bird/bird_spawner.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/world/world.gd" type="Script" id=4]
 [ext_resource path="res://scenes/world/people/jen/jen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/copter/copter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/world/people/jimmy/jimmy.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://scenes/world/cabin/cabin.gd\"
@@ -55,13 +56,6 @@ collision_mask = 4
 physics_material_override = SubResource( 2 )
 speed = 5.0
 
-[node name="People4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -9.71657, 40.0987 )
-collision_layer = 4
-collision_mask = 4
-physics_material_override = SubResource( 2 )
-speed = 5.0
-
 [node name="People3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -30.0799, 40.8392 )
 collision_layer = 2
@@ -75,10 +69,16 @@ collision_layer = 2
 collision_mask = 2
 speed = 10.0
 
+[node name="Jimmy" parent="." instance=ExtResource( 7 )]
+position = Vector2( -11.0674, 41.3655 )
+collision_layer = 4
+collision_mask = 4
+speed = 5.0
+
 [node name="BirdSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( -250.084, 90.1639 )
 scale = Vector2( 2.0001, 0.913346 )
 
 [node name="Copter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -0.0810547, -225.247 )
-threshold = 30.0
+threshold = 1.0

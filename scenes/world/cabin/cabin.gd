@@ -30,7 +30,6 @@ func _physics_process(delta: float) -> void:
 		return
 	if win:
 		$KinematicBody2D.move_and_collide(Vector2(0, -30) * delta)
-		
 	if apply_force:
 		apply_force = false
 		cabin_rigid_body.apply_impulse(next_force_position_to_apply, next_force_to_apply)
@@ -48,7 +47,8 @@ func apply_force_at_handler(force: Vector2, position_out: Vector2):
 	apply_force = true
 	
 func start_win_dequence(copter):
-	win_copter = copter
-	win = true
-	remove_child(join)
-	$KinematicBody2D/CollisionShape2D.set_deferred("disabled", false)
+	if !hasFallen:
+		win_copter = copter
+		win = true
+		remove_child(join)
+		$KinematicBody2D/CollisionShape2D.set_deferred("disabled", false)
