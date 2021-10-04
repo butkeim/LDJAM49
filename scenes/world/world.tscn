@@ -59,32 +59,32 @@ script = SubResource( 1 )
 [node name="Eric" parent="." instance=ExtResource( 8 )]
 position = Vector2( 33.8589, 40.3681 )
 collision_layer = 4
-collision_mask = 4
+collision_mask = 68
 speed = 5.0
 
 [node name="Stephanie" parent="." instance=ExtResource( 9 )]
 position = Vector2( 57.6546, 38.686 )
 collision_layer = 2
-collision_mask = 2
+collision_mask = 66
 speed = 7.0
 
 [node name="People" parent="." instance=ExtResource( 3 )]
 position = Vector2( -18.6838, 36.6045 )
 collision_layer = 2
-collision_mask = 2
+collision_mask = 66
 physics_material_override = SubResource( 2 )
 speed = 6.0
 
 [node name="Jen" parent="." instance=ExtResource( 5 )]
 position = Vector2( -50.2546, 42.4542 )
 collision_layer = 2
-collision_mask = 2
+collision_mask = 66
 speed = 10.0
 
 [node name="Jimmy" parent="." instance=ExtResource( 7 )]
 position = Vector2( -11.0674, 41.3655 )
 collision_layer = 4
-collision_mask = 4
+collision_mask = 68
 speed = 5.0
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 2 )]
