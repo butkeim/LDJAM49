@@ -221,16 +221,15 @@ script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 0, -3 )
-scale = Vector2( -0.827617, 0.827617 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 1.795, -11.533 )
-scale = Vector2( 0.184717, 0.184717 )
+scale = Vector2( 0.148, 0.148 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( -6, -48 )
-scale = Vector2( 0.197179, 0.197179 )
+scale = Vector2( 0.16, 0.16 )
 frames = ExtResource( 3 )
 frame = 1
 

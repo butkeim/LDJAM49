@@ -220,7 +220,6 @@ linear_damp = 0.5
 script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
-scale = Vector2( -1, 1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 1.795, -12.13 )
