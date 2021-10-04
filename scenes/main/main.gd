@@ -2,7 +2,7 @@ extends Node2D
 
 
 var _label_fps = null
-
+var world = preload("res://scenes/world/world.tscn")
 
 func _init():
 	VisualServer.set_debug_generate_wireframes(true)
@@ -26,6 +26,15 @@ func _ready():
 
 func _process(delta):
 
+	if Input.is_action_pressed("ui_up"):
+		$World.start_world()
+		
+	if Input.is_action_just_pressed("ui_reset"):
+		remove_child($World)
+		var new_world = world.instance()
+		add_child(new_world)
+		new_world.start_world()
+	
 	if Input.is_action_just_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 
@@ -36,6 +45,7 @@ func _process(delta):
 		get_viewport().msaa=(get_viewport().msaa + 1 ) % 5
 		#print(get_viewport().msaa)
 
+	
 	#if Input.is_action_just_pressed("ui_end") && global.debug:
 	#	get_viewport().debug_draw=((get_viewport().debug_draw + 1 ) % 2) * 3
 
