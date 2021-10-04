@@ -23,19 +23,21 @@ func start():
 
 func _process(delta: float) -> void:
 	if descent && position.y < destination_y:
-		#$AudioStreamPlayer2D.play()
 		new_position = Vector2(0, new_position.y + (delta * speed))
 	if position.y >= destination_y && !arrived_destination:
+		$AudioStreamPlayer2D2.play()
 		arrived_destination = true		
 		get_tree().create_timer(threshold_wait).connect("timeout", self, "start_ascent_handler")
 	if ascent:
 		new_position = Vector2(0, new_position.y - (delta * speed))
+				
 	
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	position = new_position
 	new_position = position
 	
 func start_descent_handler():
+	$AudioStreamPlayer2D.play()
 	descent = true
 
 func start_ascent_handler():
