@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/cabin/cabin.png" type="Texture" id=1]
 [ext_resource path="res://scenes/world/cabin/cabin.gd" type="Script" id=2]
+[ext_resource path="res://sounds/crack_cabin.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/collapse.wav" type="AudioStream" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.01
@@ -66,3 +68,11 @@ collision_mask = 0
 position = Vector2( 0.292801, 0 )
 polygon = PoolVector2Array( 12.9754, 0.730049, 152.641, -2.19793, 152.348, -82.1323, 131.559, -81.8396, 133.902, -27.6716, -136.353, -32.0636, -133.717, -87.1099, -162.997, -86.8172, -161.241, -4.83315 )
 disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

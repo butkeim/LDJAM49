@@ -71,7 +71,8 @@ func run_sound_handler():
 
 func run_sound(sound_paths):
 	var stream = load(sound_paths[randi() % sound_paths.size()])
-	var player = AudioStreamPlayer.new()
+	var player = AudioStreamPlayer2D.new()
+	player.attenuation = 10.0
 	player.stream = stream
 	add_child(player)
 	player.play()

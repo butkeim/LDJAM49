@@ -93,4 +93,4 @@ scale = Vector2( 2.0001, 0.913346 )
 
 [node name="Copter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -2.28244, -338.618 )
-threshold = 3.0
+threshold = 20.0
