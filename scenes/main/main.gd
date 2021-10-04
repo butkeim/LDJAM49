@@ -34,7 +34,7 @@ func intro_over(s):
 	pass
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and !intro_over:
 		$Intro/AnimationPlayer.play("fall")
 		$AudioStreamPlayer.play()
 
