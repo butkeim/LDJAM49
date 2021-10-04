@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/world/people/people.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/world/cabin/cabin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/world/people/jen/jen.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Cabin" parent="." instance=ExtResource( 2 )]
+
+[node name="People" parent="Cabin" instance=ExtResource( 1 )]
+position = Vector2( -45, 41 )
+
+[node name="Jen" parent="Cabin" instance=ExtResource( 3 )]
+position = Vector2( 32, 40 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Timeline 1_0002.png-302c364072cc7f41b9b7d87df6963921.stex"
+path="res://.import/jen_0001.png-26ff7ddf3e1ec03cddbb6c77a3378d02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jen/Timeline 1_0002.png"
-dest_files=[ "res://.import/Timeline 1_0002.png-302c364072cc7f41b9b7d87df6963921.stex" ]
+source_file="res://assets/jen/jen_0001.png"
+dest_files=[ "res://.import/jen_0001.png-26ff7ddf3e1ec03cddbb6c77a3378d02.stex" ]
 
 [params]
 
