@@ -12,7 +12,7 @@ var new_position
 signal has_arrived(copter)
 
 func _ready() -> void:
-	position = Vector2(0, -300)
+	position = Vector2(0, -400)
 	new_position = position
 
 func pause():

@@ -91,7 +91,7 @@ func set_sounds_res():
 	if self.name == "People":
 		sounds.append(add_audio_stream("res://sounds/momImSorry.wav"))
 		sounds.append(add_audio_stream("res://sounds/LookOut.wav"))
-		sounds.append(add_audio_stream("res://sounds/momImSorry.wav"))
+		sounds.append(add_audio_stream("res://sounds/HelpMe.wav"))
 	elif self.name == "Stephanie" || self.name == "Jen":
 		sounds.append(add_audio_stream("res://sounds/crisfemme1.wav"))
 		sounds.append(add_audio_stream("res://sounds/crisfemme2.wav"))
