@@ -225,13 +225,13 @@ scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
 position = Vector2( 1.795, -11.533 )
-rotation = 0.172069
+rotation = 0.172051
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 2 )
 frame = 1
 
 [node name="bob" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( -12, -48 )
+position = Vector2( -11.999, -48.0004 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 3 )
 frame = 2

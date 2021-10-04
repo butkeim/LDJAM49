@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	else:
 		animation_player.play("move")
 
-	if collidingbodies.size() == 0:
+	if !cabin_collided:
 		direction = 0
 		return
 	

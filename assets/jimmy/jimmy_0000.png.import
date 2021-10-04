@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Layer 6.png-c76528598c5fde76dbe6276c3648a51f.stex"
+path="res://.import/jimmy_0000.png-be881b26116b86cac613b6914fd39676.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jen/jen/Folder 1/Layer 6.png"
-dest_files=[ "res://.import/Layer 6.png-c76528598c5fde76dbe6276c3648a51f.stex" ]
+source_file="res://assets/jimmy/jimmy_0000.png"
+dest_files=[ "res://.import/jimmy_0000.png-be881b26116b86cac613b6914fd39676.stex" ]
 
 [params]
 
