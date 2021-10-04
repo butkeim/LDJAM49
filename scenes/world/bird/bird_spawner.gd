@@ -5,16 +5,16 @@ var bird_rock = preload("res://scenes/world/bird_rock/bird_rock.tscn")
 
 var cabin: RigidBody2D
 var timer: float = 0
-var threshold: float
+var threshold: float = 1
 var timer_rock: float = 0
-var threshold_rock: float = 7
+var threshold_rock: float = 12
 
-export var threshold_min = 1
-export var threshold_max = 4
+export var threshold_min = 5
+export var threshold_max = 9
 export var spawn_distance = 700
 
-export var threshold_rock_min = 6
-export var threshold_rock_max = 10
+export var threshold_rock_min = 10
+export var threshold_rock_max = 16
 
 var paused = false
 
@@ -31,10 +31,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if paused:
 		return
+	
 	threshold_spawn(delta)
 	threshold_rock_spawn(delta)
 
 func threshold_spawn(delta: float):
+	threshold_min -= delta / 8
+	threshold_max -= delta / 8
 	timer += delta
 	if timer > threshold:
 		timer = 0
@@ -47,6 +50,8 @@ func threshold_spawn(delta: float):
 		get_parent().add_child(instance_bird)
 
 func threshold_rock_spawn(delta: float):
+	threshold_rock_min -= delta / 8
+	threshold_rock_max -= delta / 8
 	timer_rock += delta
 	if timer_rock > threshold_rock:
 		timer_rock = 0
