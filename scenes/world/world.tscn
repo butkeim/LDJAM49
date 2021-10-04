@@ -104,7 +104,6 @@ scale = Vector2( 2.0001, 0.913346 )
 
 [node name="Copter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -1.28244, -338.618 )
-threshold = 60.0
 
 [node name="AreaLose" type="Area2D" parent="."]
 collision_layer = 6
