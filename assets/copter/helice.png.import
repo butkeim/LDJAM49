@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/helicopter-dessin-nhindustries-clipart-vectorisé_csp76708510.png-9f34addca56366573bef5ee6d2a4e33e.stex"
+path="res://.import/helice.png-4364391382078282f3721b95abfc804e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/helicopter-dessin-nhindustries-clipart-vectorisé_csp76708510.png"
-dest_files=[ "res://.import/helicopter-dessin-nhindustries-clipart-vectorisé_csp76708510.png-9f34addca56366573bef5ee6d2a4e33e.stex" ]
+source_file="res://assets/copter/helice.png"
+dest_files=[ "res://.import/helice.png-4364391382078282f3721b95abfc804e.stex" ]
 
 [params]
 
