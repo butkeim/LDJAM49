@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/cabin/cabin.png" type="Texture" id=1]
 [ext_resource path="res://assets/eric/eric_body.tres" type="SpriteFrames" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/stephanie/steph_body.tres" type="SpriteFrames" id=5]
 [ext_resource path="res://assets/bird/plume_1.png" type="Texture" id=6]
 [ext_resource path="res://assets/bird/Timeline 1_0002.png" type="Texture" id=7]
+[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://assets/montagne/montagne.png" type="Texture" id=10]
 [ext_resource path="res://assets/sky.png" type="Texture" id=11]
 [ext_resource path="res://assets/Bob/bob/Folder 1/bob.tres" type="SpriteFrames" id=12]
@@ -1394,6 +1395,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_left = -173.0
+margin_top = -697.0
+margin_right = 175.0
+margin_bottom = -667.0
+custom_fonts/font = ExtResource( 8 )
+text = "PRESS -SPACE- to FALL to your DEATH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Cabin" type="Node2D" parent="."]
 position = Vector2( 0, -500 )
 
@@ -1420,12 +1432,12 @@ position = Vector2( 50, 41 )
 scale = Vector2( 1.1, 1.1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( 1.795, -12.2665 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( -5, -47 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 4 )
 
@@ -1441,12 +1453,12 @@ position = Vector2( 94, 38 )
 scale = Vector2( 1.05, 1.05 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( 1.795, -12.2665 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 5 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( -5, -47 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 
@@ -1461,12 +1473,12 @@ position = Vector2( -41, 42 )
 [node name="Node2D" type="Node2D" parent="Cabin/People"]
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( 1.795, -12.2665 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 13 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( -5, -47 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 12 )
 
@@ -1483,12 +1495,12 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( 1.795, -12.2665 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 18 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( -5, -47 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 15 )
 
@@ -1504,12 +1516,12 @@ position = Vector2( -89, 43 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( 1.795, -12.2665 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 17 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( -5, -47 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 16 )
 frame = 1
