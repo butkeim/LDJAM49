@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/cabin/cabin.png" type="Texture" id=1]
 [ext_resource path="res://assets/eric/eric_body.tres" type="SpriteFrames" id=2]
@@ -25,14 +25,14 @@
 [ext_resource path="res://sounds/collapse.wav" type="AudioStream" id=23]
 [ext_resource path="res://sounds/hit4.wav" type="AudioStream" id=24]
 [ext_resource path="res://assets/Rainbow You.otf" type="DynamicFontData" id=25]
+[ext_resource path="res://sounds/airSupport.wav" type="AudioStream" id=26]
 
 [sub_resource type="DynamicFont" id=15]
 size = 32
 outline_size = 2
 font_data = ExtResource( 25 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "fall"
+[sub_resource type="Animation" id=16]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -132,7 +132,7 @@ tracks/7/keys = {
 "values": [ 9.85885, -13.8957 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=17]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/bob_body:position")
@@ -231,8 +231,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "fall"
+[sub_resource type="Animation" id=18]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -332,7 +331,7 @@ tracks/7/keys = {
 "values": [ 9.85885, -13.8957 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=19]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/bob_body:position")
@@ -431,8 +430,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "fall"
+[sub_resource type="Animation" id=20]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -532,7 +530,7 @@ tracks/7/keys = {
 "values": [ 9.85885, -13.8957 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=21]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/bob_body:position")
@@ -631,8 +629,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "fall"
+[sub_resource type="Animation" id=22]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -732,7 +729,7 @@ tracks/7/keys = {
 "values": [ 9.85885, -13.8957 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=23]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/bob_body:position")
@@ -831,8 +828,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "fall"
+[sub_resource type="Animation" id=24]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -932,7 +928,7 @@ tracks/7/keys = {
 "values": [ 9.85885, -13.8957 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=25]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/bob_body:position")
@@ -1031,7 +1027,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="ParticlesMaterial" id=11]
+[sub_resource type="ParticlesMaterial" id=26]
 emission_shape = 1
 emission_sphere_radius = 5.0
 flag_rotate_y = true
@@ -1050,7 +1046,7 @@ angle = 360.0
 angle_random = 1.0
 scale = 0.25
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=27]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cabin:position")
@@ -1209,8 +1205,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "fall"
+[sub_resource type="Animation" id=14]
 length = 11.0
 step = 0.02
 tracks/0/type = "value"
@@ -1510,7 +1505,19 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray( 6 ),
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("AudioAirSupport:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 7.36 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -1559,9 +1566,9 @@ margin_left = 40.0
 margin_top = -51.0
 margin_right = 313.0
 margin_bottom = -21.0
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 15 )
 text = "/!\\ CHOPPER ON IT'S WAY /!\\"
 
 [node name="Cabin" type="Node2D" parent="."]
@@ -1590,19 +1597,19 @@ position = Vector2( 50, 41 )
 scale = Vector2( 1.1, 1.1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( 1.795, -12.0464 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( -5.3, -47.3 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Eric"]
 playback_speed = 2.0
-anims/fall = SubResource( 1 )
-anims/move = SubResource( 2 )
+anims/fall = SubResource( 16 )
+anims/move = SubResource( 17 )
 
 [node name="Stephanie" type="Node2D" parent="Cabin"]
 position = Vector2( 94, 38 )
@@ -1611,19 +1618,19 @@ position = Vector2( 94, 38 )
 scale = Vector2( 1.05, 1.05 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( 1.795, -12.0464 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 5 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( -5.3, -47.3 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Stephanie"]
 playback_speed = 2.0
-anims/fall = SubResource( 3 )
-anims/move = SubResource( 4 )
+anims/fall = SubResource( 18 )
+anims/move = SubResource( 19 )
 
 [node name="People" type="Node2D" parent="Cabin"]
 position = Vector2( -41, 42 )
@@ -1631,19 +1638,19 @@ position = Vector2( -41, 42 )
 [node name="Node2D" type="Node2D" parent="Cabin/People"]
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( 1.795, -12.0464 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 13 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( -5.3, -47.3 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/People"]
 playback_speed = 2.0
-anims/fall = SubResource( 5 )
-anims/move = SubResource( 6 )
+anims/fall = SubResource( 20 )
+anims/move = SubResource( 21 )
 
 [node name="Jen" type="Node2D" parent="Cabin"]
 position = Vector2( -14, 43 )
@@ -1653,19 +1660,19 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( 1.795, -12.0464 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 18 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( -5.3, -47.3 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Jen"]
 playback_speed = 2.0
-anims/fall = SubResource( 7 )
-anims/move = SubResource( 8 )
+anims/fall = SubResource( 22 )
+anims/move = SubResource( 23 )
 
 [node name="Jimmy" type="Node2D" parent="Cabin"]
 position = Vector2( -89, 43 )
@@ -1674,20 +1681,19 @@ position = Vector2( -89, 43 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( 1.795, -12.0464 )
+position = Vector2( 1.795, -11.533 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 17 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( -5.3, -47.3 )
+position = Vector2( -6, -48 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 16 )
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Jimmy"]
 playback_speed = 2.0
-anims/fall = SubResource( 9 )
-anims/move = SubResource( 10 )
+anims/fall = SubResource( 24 )
+anims/move = SubResource( 25 )
 
 [node name="montagne" type="Sprite" parent="."]
 position = Vector2( 0, 403 )
@@ -1703,18 +1709,18 @@ lifetime = 10.0
 one_shot = true
 explosiveness = 1.0
 local_coords = false
-process_material = SubResource( 11 )
+process_material = SubResource( 26 )
 texture = ExtResource( 6 )
 
 [node name="Bird" type="Sprite" parent="."]
-position = Vector2( 0, 273 )
+position = Vector2( 0, 263 )
 scale = Vector2( 0.25, 0.25 )
 z_index = 2
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 12 )
-anims/fall = SubResource( 13 )
+anims/RESET = SubResource( 27 )
+anims/fall = SubResource( 14 )
 
 [node name="AudioHelpMe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -1742,3 +1748,6 @@ pitch_scale = 0.5
 [node name="AudioImpact" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 pitch_scale = 0.5
+
+[node name="AudioAirSupport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
