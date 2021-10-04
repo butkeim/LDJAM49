@@ -1047,7 +1047,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, -500 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Cabin:rotation_degrees")
@@ -1184,7 +1184,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id=13]
 resource_name = "fall"
-length = 8.0
+length = 11.0
 step = 0.02
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cabin:position")
@@ -1277,8 +1277,8 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"clips": PoolStringArray( "move", "fall" ),
-"times": PoolRealArray( 0, 0.06 )
+"clips": PoolStringArray( "move", "fall", "move" ),
+"times": PoolRealArray( 0, 0.06, 5.42 )
 }
 tracks/8/type = "animation"
 tracks/8/path = NodePath("Cabin/Stephanie/AnimationPlayer")
@@ -1287,8 +1287,8 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"clips": PoolStringArray( "move", "fall" ),
-"times": PoolRealArray( 0, 0.1 )
+"clips": PoolStringArray( "move", "fall", "move" ),
+"times": PoolRealArray( 0, 0.1, 5.42 )
 }
 tracks/9/type = "animation"
 tracks/9/path = NodePath("Cabin/People/AnimationPlayer")
@@ -1297,8 +1297,8 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"clips": PoolStringArray( "move", "fall" ),
-"times": PoolRealArray( 0, 0.08 )
+"clips": PoolStringArray( "move", "fall", "move" ),
+"times": PoolRealArray( 0, 0.08, 5.42 )
 }
 tracks/10/type = "animation"
 tracks/10/path = NodePath("Cabin/Jen/AnimationPlayer")
@@ -1307,8 +1307,8 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"clips": PoolStringArray( "move", "fall" ),
-"times": PoolRealArray( 0, 0.14 )
+"clips": PoolStringArray( "move", "fall", "move" ),
+"times": PoolRealArray( 0, 0.14, 5.42 )
 }
 tracks/11/type = "animation"
 tracks/11/path = NodePath("Cabin/Jimmy/AnimationPlayer")
@@ -1317,8 +1317,8 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"clips": PoolStringArray( "move", "fall" ),
-"times": PoolRealArray( 0, 0.04 )
+"clips": PoolStringArray( "move", "fall", "move" ),
+"times": PoolRealArray( 0, 0.04, 5.42 )
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Bird:scale")
@@ -1395,6 +1395,7 @@ __meta__ = {
 }
 
 [node name="Cabin" type="Node2D" parent="."]
+position = Vector2( 0, -500 )
 
 [node name="Camera2D" type="Camera2D" parent="Cabin"]
 scale = Vector2( 0.531987, 0.537977 )
@@ -1419,12 +1420,12 @@ position = Vector2( 50, 41 )
 scale = Vector2( 1.1, 1.1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.4621 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.525, -47.525 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 4 )
 
@@ -1440,12 +1441,12 @@ position = Vector2( 94, 38 )
 scale = Vector2( 1.05, 1.05 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.4621 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 5 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.525, -47.525 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 
@@ -1460,12 +1461,12 @@ position = Vector2( -41, 42 )
 [node name="Node2D" type="Node2D" parent="Cabin/People"]
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.4621 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 13 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.525, -47.525 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 12 )
 
@@ -1482,12 +1483,12 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.4621 )
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 18 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.525, -47.525 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 15 )
 
@@ -1503,12 +1504,12 @@ position = Vector2( -89, 43 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -12.4621 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 17 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.525, -47.525 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 16 )
 frame = 1
@@ -1542,6 +1543,5 @@ z_index = 2
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "fall"
 anims/RESET = SubResource( 14 )
 anims/fall = SubResource( 13 )

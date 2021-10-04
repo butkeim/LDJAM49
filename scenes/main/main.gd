@@ -18,13 +18,22 @@ func _ready():
 	#OS.current_screen = 1
 	#OS.window_fullscreen = true
 	#OS.window_borderless = true
-
+	$Intro/AnimationPlayer.connect("animation_finished", self, "intro_over")
 	_label_fps = get_node_or_null("GUI/LabelFPS")
 
 	#get_viewport().world.fallback_environment.background_mode = Environment.BG_COLOR
 
+func intro_over(s):
+	$World.visible = true
+	$Intro.visible = false
+	$World/Camera2D.current = true
+	$World.start_world()
+	pass
 
 func _process(delta):
+
+	if Input.is_action_just_pressed("ui_accept"):
+		$Intro/AnimationPlayer.play("fall")
 
 	if Input.is_action_just_pressed("ui_up"):
 		$World.start_world()

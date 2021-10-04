@@ -57,32 +57,32 @@ texture = ExtResource( 10 )
 script = SubResource( 1 )
 
 [node name="Eric" parent="." instance=ExtResource( 8 )]
-position = Vector2( 33.8589, 40.3681 )
+position = Vector2( 50, 41 )
 collision_layer = 4
 collision_mask = 68
 speed = 5.0
 
 [node name="Stephanie" parent="." instance=ExtResource( 9 )]
-position = Vector2( 57.6546, 38.686 )
+position = Vector2( 94, 38 )
 collision_layer = 2
 collision_mask = 66
 speed = 7.0
 
 [node name="People" parent="." instance=ExtResource( 3 )]
-position = Vector2( -18.6838, 36.6045 )
+position = Vector2( -41, 42 )
 collision_layer = 2
 collision_mask = 66
 physics_material_override = SubResource( 2 )
 speed = 6.0
 
 [node name="Jen" parent="." instance=ExtResource( 5 )]
-position = Vector2( -50.2546, 42.4542 )
+position = Vector2( -14, 43 )
 collision_layer = 2
 collision_mask = 66
 speed = 10.0
 
 [node name="Jimmy" parent="." instance=ExtResource( 7 )]
-position = Vector2( -11.0674, 41.3655 )
+position = Vector2( -89, 43 )
 collision_layer = 4
 collision_mask = 68
 speed = 5.0
