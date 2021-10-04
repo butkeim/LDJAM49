@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 	threshold_rock_spawn(delta)
 
 func threshold_spawn(delta: float):
-	threshold_min -= delta / 8
-	threshold_max -= delta / 8
+	threshold_min -= delta / 10
+	threshold_max -= delta / 10
 	threshold_min = clamp(threshold_min, 2, 100)
 	threshold_max = clamp(threshold_max, 5, 100)
 	timer += delta
@@ -53,8 +53,8 @@ func threshold_spawn(delta: float):
 		get_parent().add_child(instance_bird)
 
 func threshold_rock_spawn(delta: float):
-	threshold_rock_min -= delta / 15
-	threshold_rock_max -= delta / 15
+	threshold_rock_min -= delta / 10
+	threshold_rock_max -= delta / 10
 	threshold_rock_min = clamp(threshold_rock_min, 4, 100)
 	threshold_rock_max = clamp(threshold_rock_max, 8, 100)
 	timer_rock += delta
