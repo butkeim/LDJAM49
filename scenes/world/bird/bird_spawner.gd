@@ -27,6 +27,7 @@ func start():
 func _ready() -> void:
 	randomize()
 	cabin = $"../Cabin/RigidBody2D/"
+	$"../Copter/".connect("has_arrived", self, "stop_handler")
 
 func _process(delta: float) -> void:
 	if paused:
@@ -72,3 +73,6 @@ func get_random_valid_angle() -> float:
 		return rand_range(130, 150)
 	else:
 		return rand_range(210, 230)
+		
+func stop_handler(copter):
+	paused = true

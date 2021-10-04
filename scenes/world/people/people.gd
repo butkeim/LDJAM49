@@ -24,6 +24,7 @@ func _ready() -> void:
 	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
 	position_right_side = $"../Cabin/RigidBody2D/Position2DRightSide"
 	sprites = $"Node2D"
+	$"../Copter".connect("has_arrived", self, "saved_handler")
 	
 	$"Node2D/bob".frame = 0
 	
@@ -75,3 +76,7 @@ func _physics_process(delta: float) -> void:
 		side_factor = 0.5
 	
 	apply_central_impulse(Vector2(direction * speed * side_factor * 10, 0))
+	
+func saved_handler(copter):
+	paused = true
+	
