@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/world/people/people.gd" type="Script" id=1]
 [ext_resource path="res://assets/jimmy/jimmy_body.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/jimmy/jimmy.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://scenes/world/people/people.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/world/people/jen/jen.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.05
@@ -224,12 +222,12 @@ script = ExtResource( 1 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( 1.795, -11.533 )
+position = Vector2( 1.795, -11.9405 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( -6, -48 )
+position = Vector2( -5.79167, -47.7917 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 frame = 1
@@ -243,9 +241,3 @@ autoplay = "move"
 playback_speed = 2.0
 anims/fall = SubResource( 3 )
 anims/move = SubResource( 4 )
-
-[node name="Jen" parent="." instance=ExtResource( 5 )]
-position = Vector2( 46, 0 )
-
-[node name="People" parent="." instance=ExtResource( 4 )]
-position = Vector2( 82, 0 )

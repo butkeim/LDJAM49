@@ -25,6 +25,8 @@ func _ready() -> void:
 	position_right_side = $"../Cabin/RigidBody2D/Position2DRightSide"
 	sprites = $"Node2D"
 	
+	$"Node2D/bob".frame = 0
+	
 func _process(delta: float) -> void:
 	if paused:
 		return
