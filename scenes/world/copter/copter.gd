@@ -35,10 +35,8 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	print(new_position)
 	position = new_position
 	new_position = position
-	print("integrate force")
 	
 func start_descent_handler():
-	print("start descend")
 	descent = true
 
 func start_ascent_handler():
