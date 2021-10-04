@@ -3,6 +3,7 @@ extends Node2D
 
 var _label_fps = null
 var world = preload("res://scenes/world/world.tscn")
+var intro_over = false
 
 func _init():
 	VisualServer.set_debug_generate_wireframes(true)
@@ -29,6 +30,7 @@ func intro_over(s):
 	$Intro.visible = false
 	$World/Camera2D.current = true
 	$World.start_world()
+	intro_over = true
 	pass
 
 func _process(delta):
@@ -37,7 +39,7 @@ func _process(delta):
 		$AudioStreamPlayer.play()
 
 		
-	if Input.is_action_just_pressed("ui_reset"):
+	if Input.is_action_just_pressed("ui_reset") and intro_over:
 		remove_child($World)
 		var new_world = world.instance()
 		add_child(new_world)

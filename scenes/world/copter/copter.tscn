@@ -40,6 +40,7 @@ tracks/1/keys = {
 }
 
 [node name="Copter" type="RigidBody2D"]
+z_index = -2
 mode = 2
 gravity_scale = 0.0
 script = ExtResource( 2 )
