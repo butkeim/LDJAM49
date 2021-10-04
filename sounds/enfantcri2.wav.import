@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/enfantcri2.wav-9297c244f63acd39892c81d8442f3c76.sample"
+
+[deps]
+
+source_file="res://sounds/enfantcri2.wav"
+dest_files=[ "res://.import/enfantcri2.wav-9297c244f63acd39892c81d8442f3c76.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

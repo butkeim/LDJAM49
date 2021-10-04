@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HelpMe.wav-bb66215759356d4e645028a73571a823.sample"
+
+[deps]
+
+source_file="res://sounds/HelpMe.wav"
+dest_files=[ "res://.import/HelpMe.wav-bb66215759356d4e645028a73571a823.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

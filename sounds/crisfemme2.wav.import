@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crisfemme2.wav-5e6e3859d9ffa15288a4649f848d1796.sample"
+
+[deps]
+
+source_file="res://sounds/crisfemme2.wav"
+dest_files=[ "res://.import/crisfemme2.wav-5e6e3859d9ffa15288a4649f848d1796.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

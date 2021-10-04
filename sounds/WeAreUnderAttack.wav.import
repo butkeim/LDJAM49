@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WeAreUnderAttack.wav-e30401dcc096769c41e9575602ec0ed8.sample"
+
+[deps]
+
+source_file="res://sounds/WeAreUnderAttack.wav"
+dest_files=[ "res://.import/WeAreUnderAttack.wav-e30401dcc096769c41e9575602ec0ed8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
