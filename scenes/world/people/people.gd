@@ -113,7 +113,6 @@ func add_audio_stream(path) -> AudioStreamPlayer:
 func play_scream(cabin_collided):
 	if !play_sound_stop && !cabin_collided && sounds.size() != 0:
 		var id_to_play = randi() % sounds.size()
-		print(id_to_play)
 		if !is_any_sound_playing():
 			sounds[id_to_play].play()
 			play_sound_stop = true
