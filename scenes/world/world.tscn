@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/world/cabin/cabin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/bird/bird_spawner.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/world/people/jimmy/jimmy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/world/people/eric/eric.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/world/people/stephanie/stephanie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/montagne/montagne.png" type="Texture" id=10]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://scenes/world/cabin/cabin.gd\"
@@ -40,6 +41,11 @@ script = ExtResource( 4 )
 scale = Vector2( 0.531987, 0.537977 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[node name="montagne" type="Sprite" parent="."]
+position = Vector2( 0, 172 )
+scale = Vector2( 0.140169, 0.140169 )
+texture = ExtResource( 10 )
 
 [node name="Cabin" parent="." instance=ExtResource( 1 )]
 script = SubResource( 1 )
@@ -81,4 +87,4 @@ scale = Vector2( 2.0001, 0.913346 )
 
 [node name="Copter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -0.0810547, -225.247 )
-threshold = 1.0
+threshold = 30.0
