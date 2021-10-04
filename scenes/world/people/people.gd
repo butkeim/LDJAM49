@@ -58,8 +58,8 @@ func _physics_process(delta: float) -> void:
 	
 	if direction == 0:
 		return
-	
-	sprites.scale.x = direction * -1
+
+	sprites.scale.x = direction * -abs(sprites.scale.x)
 	if direction == 1:
 		distance_to_side = position.distance_to(position_right_side.global_position)
 	elif direction == -1:
