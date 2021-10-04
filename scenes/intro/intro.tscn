@@ -1196,7 +1196,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 1.22343, 5.02, 5.36 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -500 ), Vector2( 0, -510 ), Vector2( 0, -220.027 ), Vector2( 0, 0 ), Vector2( 0, 230 ) ]
+"values": [ Vector2( 0, -500 ), Vector2( 0, -510 ), Vector2( 0, -220.027 ), Vector2( 0, -44 ), Vector2( 0, 230 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Cabin:rotation_degrees")
@@ -1420,12 +1420,12 @@ position = Vector2( 50, 41 )
 scale = Vector2( 1.1, 1.1 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( 1.795, -12.4621 )
+position = Vector2( 1.795, -12.2665 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Eric/Node2D"]
-position = Vector2( -5.525, -47.525 )
+position = Vector2( -5, -47 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 4 )
 
@@ -1441,12 +1441,12 @@ position = Vector2( 94, 38 )
 scale = Vector2( 1.05, 1.05 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( 1.795, -12.4621 )
+position = Vector2( 1.795, -12.2665 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 5 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Stephanie/Node2D"]
-position = Vector2( -5.525, -47.525 )
+position = Vector2( -5, -47 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
 
@@ -1461,12 +1461,12 @@ position = Vector2( -41, 42 )
 [node name="Node2D" type="Node2D" parent="Cabin/People"]
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( 1.795, -12.4621 )
+position = Vector2( 1.795, -12.2665 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 13 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/People/Node2D"]
-position = Vector2( -5.525, -47.525 )
+position = Vector2( -5, -47 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 12 )
 
@@ -1483,12 +1483,12 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( 1.795, -12.4621 )
+position = Vector2( 1.795, -12.2665 )
 scale = Vector2( 0.187, 0.187 )
 frames = ExtResource( 18 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jen/Node2D"]
-position = Vector2( -5.525, -47.525 )
+position = Vector2( -5, -47 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 15 )
 
@@ -1504,12 +1504,12 @@ position = Vector2( -89, 43 )
 scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( 1.795, -12.4621 )
+position = Vector2( 1.795, -12.2665 )
 scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 17 )
 
 [node name="bob" type="AnimatedSprite" parent="Cabin/Jimmy/Node2D"]
-position = Vector2( -5.525, -47.525 )
+position = Vector2( -5, -47 )
 scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 16 )
 frame = 1
