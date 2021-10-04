@@ -23,6 +23,7 @@ func start():
 
 func _process(delta: float) -> void:
 	if descent && position.y < destination_y:
+		#$AudioStreamPlayer2D.play()
 		new_position = Vector2(0, new_position.y + (delta * speed))
 	if position.y >= destination_y && !arrived_destination:
 		arrived_destination = true		
