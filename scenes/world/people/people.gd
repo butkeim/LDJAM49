@@ -43,6 +43,8 @@ func _process(delta: float) -> void:
 		animation_player.play("move")
 
 	if !cabin_collided:
+		if $AudioStreamPlayer2D != null && !$AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.play()
 		direction = 0
 		return
 	
