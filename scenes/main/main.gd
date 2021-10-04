@@ -21,6 +21,7 @@ func _ready():
 	$Intro/AnimationPlayer.connect("animation_finished", self, "intro_over")
 	_label_fps = get_node_or_null("GUI/LabelFPS")
 
+	$Intro/Cabin/Camera2D.current = true
 	#get_viewport().world.fallback_environment.background_mode = Environment.BG_COLOR
 
 func intro_over(s):

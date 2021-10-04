@@ -16,6 +16,206 @@
 [ext_resource path="res://assets/jimmy/jimmy_body.tres" type="SpriteFrames" id=17]
 [ext_resource path="res://assets/jen/jen_body.tres" type="SpriteFrames" id=18]
 
+[sub_resource type="Animation" id=1]
+resource_name = "fall"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/bob_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/bob:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/bob:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -12, -48 ), Vector2( -1.5, -52 ), Vector2( 9, -48 ), Vector2( -1.5, -52 ), Vector2( -12, -48 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/bob:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/bob:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimationPlayer:playback_speed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/bob_body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -11.533 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Node2D/bob_body:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 9.85885, -13.8957 ]
+}
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/bob_body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/bob:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6, -48 ), Vector2( -5, -47 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/bob:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/bob_body:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/bob_body:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/bob:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/bob:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimationPlayer:playback_speed")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "fall"
 loop = true
@@ -816,207 +1016,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "fall"
-loop = true
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Node2D/bob_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D/bob:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Node2D/bob:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -12, -48 ), Vector2( -1.5, -52 ), Vector2( 9, -48 ), Vector2( -1.5, -52 ), Vector2( -12, -48 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Node2D/bob:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Node2D/bob:flip_h")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.25, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ false, true, false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("AnimationPlayer:playback_speed")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Node2D/bob_body:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -11.533 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Node2D/bob_body:rotation_degrees")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 9.85885, -13.8957 ]
-}
-
-[sub_resource type="Animation" id=12]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Node2D/bob_body:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.795, -11.533 ), Vector2( 1.795, -13 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D/bob:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -6, -48 ), Vector2( -5, -47 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Node2D/bob:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Node2D/bob_body:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Node2D/bob_body:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Node2D/bob:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Node2D/bob:flip_h")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("AnimationPlayer:playback_speed")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 2.0 ]
-}
-
-[sub_resource type="ParticlesMaterial" id=15]
+[sub_resource type="ParticlesMaterial" id=11]
 emission_shape = 1
 emission_sphere_radius = 5.0
 flag_rotate_y = true
@@ -1035,7 +1035,7 @@ angle = 360.0
 angle_random = 1.0
 scale = 0.25
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cabin:position")
@@ -1431,8 +1431,8 @@ frames = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Eric"]
 playback_speed = 2.0
-anims/fall = SubResource( 3 )
-anims/move = SubResource( 4 )
+anims/fall = SubResource( 1 )
+anims/move = SubResource( 2 )
 
 [node name="Stephanie" type="Node2D" parent="Cabin"]
 position = Vector2( 94, 38 )
@@ -1452,8 +1452,8 @@ frames = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Stephanie"]
 playback_speed = 2.0
-anims/fall = SubResource( 5 )
-anims/move = SubResource( 6 )
+anims/fall = SubResource( 3 )
+anims/move = SubResource( 4 )
 
 [node name="People" type="Node2D" parent="Cabin"]
 position = Vector2( -41, 42 )
@@ -1472,8 +1472,8 @@ frames = ExtResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/People"]
 playback_speed = 2.0
-anims/fall = SubResource( 7 )
-anims/move = SubResource( 8 )
+anims/fall = SubResource( 5 )
+anims/move = SubResource( 6 )
 
 [node name="Jen" type="Node2D" parent="Cabin"]
 position = Vector2( -14, 43 )
@@ -1494,8 +1494,8 @@ frames = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Jen"]
 playback_speed = 2.0
-anims/fall = SubResource( 9 )
-anims/move = SubResource( 10 )
+anims/fall = SubResource( 7 )
+anims/move = SubResource( 8 )
 
 [node name="Jimmy" type="Node2D" parent="Cabin"]
 position = Vector2( -89, 43 )
@@ -1516,8 +1516,8 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cabin/Jimmy"]
 playback_speed = 2.0
-anims/fall = SubResource( 11 )
-anims/move = SubResource( 12 )
+anims/fall = SubResource( 9 )
+anims/move = SubResource( 10 )
 
 [node name="montagne" type="Sprite" parent="."]
 position = Vector2( 0, 403 )
@@ -1533,7 +1533,7 @@ lifetime = 10.0
 one_shot = true
 explosiveness = 1.0
 local_coords = false
-process_material = SubResource( 15 )
+process_material = SubResource( 11 )
 texture = ExtResource( 6 )
 
 [node name="Bird" type="Sprite" parent="."]
@@ -1543,5 +1543,5 @@ z_index = 2
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 14 )
+anims/RESET = SubResource( 12 )
 anims/fall = SubResource( 13 )
