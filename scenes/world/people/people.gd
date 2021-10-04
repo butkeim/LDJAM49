@@ -8,6 +8,16 @@ var position_right_side: Position2D
 var sprites: Node2D
 onready var animation_player = $AnimationPlayer
 
+var paused = true
+
+func pause():
+	paused = true
+	$AnimationPlayer.stop(true)
+
+func start():
+	paused = false
+	$AnimationPlayer.play()
+
 func _ready() -> void:
 	contact_monitor = true
 	contacts_reported = 5
@@ -16,6 +26,8 @@ func _ready() -> void:
 	sprites = $"Node2D"
 	
 func _process(delta: float) -> void:
+	if paused:
+		return
 	var collidingbodies = get_colliding_bodies()
 	var cabin_collided = false
 	for cb in collidingbodies:
@@ -39,6 +51,8 @@ func _process(delta: float) -> void:
 		direction = 0
 
 func _physics_process(delta: float) -> void:
+	if paused:
+		return
 	var distance_side_to_player: int
 	var distance_to_side = 0
 	

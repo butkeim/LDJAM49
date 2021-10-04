@@ -16,11 +16,21 @@ export var spawn_distance = 700
 export var threshold_rock_min = 6
 export var threshold_rock_max = 10
 
+var paused = false
+
+func pause():
+	paused = true
+
+func start():
+	paused = false
+
 func _ready() -> void:
 	randomize()
 	cabin = $"../Cabin/RigidBody2D/"
 
 func _process(delta: float) -> void:
+	if paused:
+		return
 	threshold_spawn(delta)
 	threshold_rock_spawn(delta)
 
