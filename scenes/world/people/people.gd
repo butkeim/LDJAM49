@@ -10,6 +10,9 @@ onready var animation_player = $AnimationPlayer
 
 var paused = true
 
+var sounds: Array
+var play_sound_stop = true
+
 func pause():
 	paused = true
 	$AnimationPlayer.stop(true)
@@ -19,6 +22,7 @@ func start():
 	$AnimationPlayer.play()
 
 func _ready() -> void:
+	set_sounds_res()
 	contact_monitor = true
 	contacts_reported = 5
 	position_left_side = $"../Cabin/RigidBody2D/Position2DLeftSide"
@@ -42,11 +46,12 @@ func _process(delta: float) -> void:
 	else:
 		animation_player.play("move")
 
+	play_scream(cabin_collided)
+	
 	if !cabin_collided:
-		if $AudioStreamPlayer2D != null && !$AudioStreamPlayer2D.playing:
-			$AudioStreamPlayer2D.play()
 		direction = 0
 		return
+	
 	
 	if Input.is_action_pressed("ui_left"):
 		direction = -1
@@ -81,4 +86,45 @@ func _physics_process(delta: float) -> void:
 	
 func saved_handler(copter):
 	paused = true
+
+func set_sounds_res():
+	if self.name == "People":
+		sounds.append(add_audio_stream("res://sounds/momImSorry.wav"))
+		sounds.append(add_audio_stream("res://sounds/LookOut.wav"))
+		sounds.append(add_audio_stream("res://sounds/momImSorry.wav"))
+	elif self.name == "Stephanie" || self.name == "Jen":
+		sounds.append(add_audio_stream("res://sounds/crisfemme1.wav"))
+		sounds.append(add_audio_stream("res://sounds/crisfemme2.wav"))
+	elif self.name == "Jimmy":
+		sounds.append(add_audio_stream("res://sounds/enfantCri1.wav"))
+		sounds.append(add_audio_stream("res://sounds/enfantcri2.wav"))
+	else:
+		sounds.append(add_audio_stream("res://sounds/criHomme1.wav"))
+		sounds.append(add_audio_stream("res://sounds/crihomme2.wav"))
+		
+
+func add_audio_stream(path) -> AudioStreamPlayer:
+	var stream = load(path)
+	var player = AudioStreamPlayer.new()
+	player.stream = stream
+	add_child(player)
+	return player
+
+func play_scream(cabin_collided):
+	if !play_sound_stop && !cabin_collided && sounds.size() != 0:
+		print("plt")
+		var id_to_play = randi() % sounds.size()
+		print(id_to_play)
+		if !is_any_sound_playing():
+			sounds[id_to_play].play()
+			play_sound_stop = true
+	elif cabin_collided:
+		play_sound_stop = false
+
+func is_any_sound_playing() -> bool:
+	for sound in sounds:
+		if sound.is_playing():
+			return true
+	return false
+		
 	

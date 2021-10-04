@@ -22,7 +22,6 @@ func start():
 	get_tree().create_timer(threshold).connect("timeout" , self, "start_descent_handler")
 
 func _process(delta: float) -> void:
-	print(new_position)
 	if descent && position.y < destination_y:
 		new_position = Vector2(0, new_position.y + (delta * speed))
 	if position.y >= destination_y && !arrived_destination:
@@ -32,7 +31,6 @@ func _process(delta: float) -> void:
 		new_position = Vector2(0, new_position.y - (delta * speed))
 	
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
-	print(new_position)
 	position = new_position
 	new_position = position
 	
