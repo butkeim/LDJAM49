@@ -1,16 +1,15 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/world/people/people.gd" type="Script" id=1]
-[ext_resource path="res://assets/jen/jen_body.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://assets/jen/jen.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://assets/jimmy/jimmy_body.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/jimmy/jimmy.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.05
 rough = true
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 14.4665
-height = 27.4701
+height = 16.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "fall"
@@ -212,7 +211,7 @@ tracks/7/keys = {
 "values": [ 2.0 ]
 }
 
-[node name="Jen" type="RigidBody2D"]
+[node name="Jimmy" type="RigidBody2D"]
 mode = 2
 mass = 40.0
 physics_material_override = SubResource( 1 )
@@ -220,27 +219,25 @@ linear_damp = 0.5
 script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 0, -3 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.594718, 0.594718 )
 
 [node name="bob_body" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( 1.795, -11.533 )
-rotation = 0.172051
-scale = Vector2( 0.187, 0.187 )
+position = Vector2( 1.795, -11.9405 )
+scale = Vector2( 0.184717, 0.184717 )
 frames = ExtResource( 2 )
-frame = 1
 
 [node name="bob" type="AnimatedSprite" parent="Node2D"]
-position = Vector2( -11.999, -48.0004 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( -5.79167, -47.7917 )
+scale = Vector2( 0.181912, 0.181912 )
 frames = ExtResource( 3 )
-frame = 2
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -23 )
+position = Vector2( 0, -15 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
+playback_speed = 2.0
 anims/fall = SubResource( 3 )
 anims/move = SubResource( 4 )

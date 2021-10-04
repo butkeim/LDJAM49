@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Layer 9.png-be0902cdb118a323e5026b4eab5739bc.stex"
+path="res://.import/jimmy_body_0000.png-2b4654f92e5835aae2f44b1db5a9214c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jen/jen/Folder 1/Layer 9.png"
-dest_files=[ "res://.import/Layer 9.png-be0902cdb118a323e5026b4eab5739bc.stex" ]
+source_file="res://assets/jimmy/jimmy_body_0000.png"
+dest_files=[ "res://.import/jimmy_body_0000.png-2b4654f92e5835aae2f44b1db5a9214c.stex" ]
 
 [params]
 
