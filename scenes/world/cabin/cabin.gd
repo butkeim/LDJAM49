@@ -48,8 +48,8 @@ func _physics_process(delta: float) -> void:
 		$"RigidBody2D/CollisionShape2D2".set_deferred("disabled", true)
 
 func crack_volume_from_angle():
-	var angle = abs(cabin_rigid_body.rotation_degrees) * 0.9# * 1.1
-	audio_player.volume_db = clamp(-10 + angle, -10, 30)
+	var angle = abs(cabin_rigid_body.rotation_degrees) * 1.8# * 1.1
+	audio_player.volume_db = clamp(-10 + angle, -10, 25)
 	
 
 func apply_force_at_handler(force: Vector2, position_out: Vector2):
